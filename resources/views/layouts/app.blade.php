@@ -17,23 +17,27 @@
 
     <!-- Styles -->
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="{{asset('css/font.css')}}" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <script src="{{asset('js/materialize.min.js')}}"></script>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{{ asset('js/jquery-2.1.1.min.js') }}"></script>
 
-
+<script>
+    $(document).ready(function(){
+        $('.materialboxed').materialbox();
+    });
+</script>
 
 </head>
 <body>
     <div id="app">
         <nav>
             <div class="container">
-                <a class="brand-logo" href="{{ url('/') }}">
+                <a class="brand-logo" style="text-decoration: none" href="{{ url('/') }}">
                     Roti Krian
                 </a>
 
@@ -44,13 +48,13 @@
                     <ul class="right hide-on-med-and-down" id="nav-mobile">
                         <!-- Authentication Links -->
                         @guest
-                            <li><a href="{{ route('login') }}">{{ __('Login') }}</a></li>
+                            <li><a style="color: white; text-decoration: none" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             @if (Route::has('register'))
-                                <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+                                <li><a style="color: white; text-decoration: none" href="{{ route('register') }}">{{ __('Register') }}</a></li>
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="color: white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
@@ -78,5 +82,7 @@
             @yield('content')
         </main>
     </div>
+
+
 </body>
 </html>

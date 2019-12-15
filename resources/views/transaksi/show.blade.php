@@ -10,11 +10,11 @@
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">Foto</th>
-                <th scope="col">Nama Barang</th>
-                <th scope="col">Kategori</th>
-                <th scope="col">Harga</th>
+                <th scope="col">Nama Roti</th>
+                <th scope="col">Rasa</th>
+                <th scope="col">Harga(1 unit)</th>
                 <th scope="col">Jumlah</th>
-                <th scope="col">Subtotal</th>
+                <th scope="col">Total Keseluruhan</th>
             </tr>
             </thead>
             <tbody>
@@ -22,7 +22,7 @@
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>
-                        <img class="responsive-img" src="{{ asset($detail->item->image) }}" width="50px" height="50px">
+                        <img class="responsive-img" src="{{ asset($detail->item->gambar) }}" width="50px" height="50px">
                     </td>
                     <td>{{ $detail->item->nama }}</td>
                     <td>{{ $detail->item->kategori->nama }}</td>
